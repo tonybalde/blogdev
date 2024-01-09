@@ -2,6 +2,10 @@ import {Link} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {UserContext} from "./UserContext";
 
+import { IoLogIn } from "react-icons/io5";
+import { HiMiniPencilSquare } from "react-icons/hi2";
+
+
 export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   useEffect(() => {
@@ -26,21 +30,22 @@ export default function Header() {
 
   return (
     <header>
-      <Link to="/" className="logo">MyBlog</Link>
+      <Link to="/" className="logo">BlogDev</Link>
       <nav>
         {username && (
-          <>
+          <div className="header-links">
             <Link to="/create">Create new post</Link>
             <a onClick={logout}>Logout ({username})</a>
-          </>
+          </div>
         )}
         {!username && (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
+          <div className="header-links">
+            <Link to="/login"><IoLogIn size={20}/>Login</Link>
+            <Link to="/register"><HiMiniPencilSquare size={20}/>Register</Link>
+          </div>
         )}
       </nav>
     </header>
+    
   );
 }
