@@ -39,6 +39,7 @@ export default function LoginPage() {
              placeholder="password"
              value={password}
              onChange={ev => setPassword(ev.target.value)}/>
+      <p className="note"><b>NOTE</b>: You can use "<b>test</b>" as a username and "<b>test</b>" as a password to login.</p>       
       <button>Login</button>
     </form>
   );

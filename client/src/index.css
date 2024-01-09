@@ -12,8 +12,16 @@ code {
     monospace;
 }
 
+header{
+  border-bottom: 2px solid rgba(0, 119, 255, 0.726);
+}
+
 .header-links{
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.note{
+  font-size: 16px;
 }

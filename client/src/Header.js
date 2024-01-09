@@ -4,6 +4,8 @@ import {UserContext} from "./UserContext";
 
 import { IoLogIn } from "react-icons/io5";
 import { HiMiniPencilSquare } from "react-icons/hi2";
+import { FaPencil } from "react-icons/fa6";
+import { IoLogOut } from "react-icons/io5";
 
 
 export default function Header() {
@@ -30,21 +32,21 @@ export default function Header() {
 
   return (
     <header>
-      <Link to="/" className="logo">BlogDev</Link>
-      <nav>
-        {username && (
-          <div className="header-links">
-            <Link to="/create">Create new post</Link>
-            <a onClick={logout}>Logout ({username})</a>
-          </div>
-        )}
-        {!username && (
-          <div className="header-links">
-            <Link to="/login"><IoLogIn size={20}/>Login</Link>
-            <Link to="/register"><HiMiniPencilSquare size={20}/>Register</Link>
-          </div>
-        )}
-      </nav>
+        <Link to="/" className="logo">BlogDev</Link>
+        <nav>
+          {username && (
+            <div className="header-links">
+              <Link to="/create"><FaPencil size={20}/>Create new post</Link>
+              <a onClick={logout}><IoLogOut size={20} />Logout ({username})</a>
+            </div>
+          )}
+          {!username && (
+            <div className="header-links">
+              <Link to="/login"><IoLogIn size={20}/>Login</Link>
+              <Link to="/register"><HiMiniPencilSquare size={20}/>Register</Link>
+            </div>
+          )}
+        </nav>
     </header>
     
   );
